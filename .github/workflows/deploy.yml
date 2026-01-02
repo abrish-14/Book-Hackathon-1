@@ -1,0 +1,52 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    name: Deploy to GitHub Pages
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write  # Required to push changes to the repository
+      pages: write     # Required to deploy to GitHub Pages
+      id-token: write  # Required for requesting an OIDC token
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+          cache-dependency-path: 'classic/website/package-lock.json'
+
+      - name: Install dependencies
+        run: |
+          cd classic/website
+          npm ci
+
+      - name: Build website
+        run: |
+          cd classic/website
+          npm run build
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
+
+      - name: Upload to GitHub Pages
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: classic/website/build
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
+        if: github.ref == 'refs/heads/main'  # Only deploy on push to main branch

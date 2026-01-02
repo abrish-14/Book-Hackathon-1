@@ -1,0 +1,41 @@
+# ROS2 Parameters for VLA Integration Module
+vla_action_client:
+  ros__parameters:
+    # Action client parameters
+    action_timeout: 30.0
+    max_retries: 3
+    retry_delay: 1.0
+
+    # Robot capabilities
+    robot_max_speed: 1.0  # m/s
+    robot_arm_reach: 1.0  # meters
+    robot_max_payload: 5.0  # kg
+
+    # Supported actions
+    supported_actions: [
+      "move",
+      "navigate",
+      "grasp",
+      "place",
+      "speak",
+      "turn",
+      "wait"
+    ]
+
+    # Navigation parameters
+    navigation:
+      goal_tolerance: 0.5  # meters
+      max_linear_speed: 1.0
+      max_angular_speed: 1.0
+
+    # Grasping parameters
+    grasping:
+      default_gripper_width: 0.1
+      default_force: 50.0
+      max_force: 100.0
+
+    # Speaking parameters
+    speaking:
+      default_volume: 0.8
+      default_voice: "default"
+      max_volume: 1.0

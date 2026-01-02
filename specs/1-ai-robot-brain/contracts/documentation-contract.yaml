@@ -1,0 +1,65 @@
+# Documentation Contract: AI-Robot Brain Module
+
+## Overview
+This contract defines the structure, content, and accessibility requirements for the AI-Robot Brain documentation module.
+
+## Module Contract
+
+### Module Structure Requirements
+- **Path**: `/docs/ai-robot-brain/`
+- **Title**: "AI-Robot Brain (NVIDIA Isaac™)"
+- **Description**: "Documentation for NVIDIA Isaac Sim, Isaac ROS, and Nav2 technologies"
+
+### Chapter Contract
+Each chapter must implement:
+
+#### Required Fields
+- `title`: Descriptive title of the chapter
+- `slug`: URL-friendly identifier
+- `description`: Brief summary of the chapter content
+- `sidebar_label`: Label for navigation sidebar
+
+#### Content Requirements
+- At least one conceptual overview page
+- At least one practical example or tutorial
+- Proper cross-references to related topics
+- Links to official NVIDIA documentation
+
+### Chapter 1: Isaac Sim Contract
+- **Path**: `/docs/ai-robot-brain/isaac-sim/`
+- **Focus**: Photorealistic simulation
+- **Required Pages**:
+  - Overview of Isaac Sim capabilities
+  - Setup and installation guide
+  - Simulation environment creation
+  - Synthetic data generation examples
+
+### Chapter 2: Isaac ROS Contract
+- **Path**: `/docs/ai-robot-brain/isaac-ros/`
+- **Focus**: VSLAM and navigation
+- **Required Pages**:
+  - Overview of Isaac ROS packages
+  - VSLAM implementation guide
+  - Navigation setup instructions
+  - Practical tutorials
+
+### Chapter 3: Nav2 Contract
+- **Path**: `/docs/ai-robot-brain/nav2-humanoid/`
+- **Focus**: Path planning for humanoid robots
+- **Required Pages**:
+  - Overview of Nav2 capabilities
+  - Path planning concepts
+  - Humanoid-specific navigation
+  - Implementation guide
+
+## Navigation Contract
+- Module must be accessible from main documentation navigation
+- Clear breadcrumbs within the module
+- Cross-links between related concepts in different chapters
+- Search functionality must index all module content
+
+## Quality Contract
+- All content must be technically accurate and verified
+- Examples must be executable and tested
+- Documentation must follow accessibility standards
+- All external links must be validated and current

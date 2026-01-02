@@ -1,0 +1,221 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+.venv/
+pip-log.txt
+pip-delete-this-directory.txt
+.tox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.log
+.git/refs/replace/
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.pytest_cache/
+.hypothesis/
+
+# Virtual Environment
+venv/
+env/
+ENV/
+
+# ROS 2
+build/
+install/
+log/
+*.log
+*.yaml.swp
+
+# OpenAI API
+.openai
+
+# Audio/Whisper
+*.wav
+*.mp3
+*.flac
+*.m4a
+
+# Configuration
+.env
+.env.local
+.env.*.local
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/
+.cov/
+.mypy_cache/
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# PyInstaller
+*.manifest
+*.spec
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Runtime data
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# Coverage directory used by tools like istanbul
+coverage/
+*.lcov
+
+# Temporary folders
+tmp/
+temp/
+
+# Compiled source
+*.com
+*.class
+*.dll
+*.exe
+*.o
+*.so
+
+# Packages
+*.tar.gz
+
+# Documentation
+docs/_build/
+
+# Environment variables
+.env*
+
+# Local configuration
+.local/
+
+# Docker (if used)
+.dockerenv
+.dockercfg
+.dockerignore
+!Dockerfile
+!docker-compose.yml
+
+# Docusaurus / Node.js
+.docusaurus/
+node_modules/
+build/
+.cache/
+.npm/
+.yarn/
+dist/
+.nyc_output/
+coverage/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnp.*
+.pnp.cjs
+.yarn-integrity
+.yarn-state.yml
+.yarn/cache/
+.yarn/install-state.gz
+.yarn/plugins/
+.yarn/versions/
+
+# Additional build and temp files
+*.tmp
+*.temp
+tmp/
+temp/
+.DS_Store
+Thumbs.db
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+.vscode/settings.json
+.vscode/tasks.json
+.vscode/launch.json
+.vscode/recommendations.json
+.idea/*
+*.swp
+*.swo
+*~
+.history/
+.vite/
+.vitepress/
+.nuxt/
+.next/
+.vercel/
+.netlify/
+netlify/
+vercel.json
+.svelte-kit/
+.svelte/
+.angular/
+.nx/
+.dvc/
+.dub/
+.floo/
+.idea/
+.vs/
+.vscode/
+!.vscode/extensions.json
+.vscode-test/
+.cache/
+.turbo/
+.snyk/
+.istanbul.yml
+coverage-final.json

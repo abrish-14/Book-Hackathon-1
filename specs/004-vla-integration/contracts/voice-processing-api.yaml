@@ -1,0 +1,136 @@
+openapi: 3.0.0
+info:
+  title: VLA Voice Processing API
+  description: API for processing voice commands in the Vision-Language-Action system
+  version: 1.0.0
+servers:
+  - url: http://localhost:8000
+    description: Local development server
+paths:
+  /voice/transcribe:
+    post:
+      summary: Transcribe voice command using Whisper
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                audio:
+                  type: string
+                  format: binary
+                  description: Audio file to transcribe
+      responses:
+        '200':
+          description: Successfully transcribed audio
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  transcription:
+                    type: string
+                    description: Transcribed text
+                  confidence:
+                    type: number
+                    format: float
+                    description: Confidence score of transcription
+                  language:
+                    type: string
+                    description: Detected language
+        '400':
+          description: Invalid audio format or missing file
+        '500':
+          description: Processing error
+  /plan/generate:
+    post:
+      summary: Generate action plan from natural language
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                command:
+                  type: string
+                  description: Natural language command to process
+                context:
+                  type: object
+                  description: Context for planning (optional)
+      responses:
+        '200':
+          description: Successfully generated action plan
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  plan_id:
+                    type: string
+                    description: Unique identifier for the plan
+                  tasks:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Task'
+                  validation_status:
+                    type: string
+                    enum: [valid, invalid, pending]
+        '400':
+          description: Invalid command format
+        '500':
+          description: Planning error
+  /execution/status/{plan_id}:
+    get:
+      summary: Get execution status of a plan
+      parameters:
+        - name: plan_id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Execution status
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExecutionStatus'
+        '404':
+          description: Plan not found
+components:
+  schemas:
+    Task:
+      type: object
+      properties:
+        id:
+          type: string
+        action_type:
+          type: string
+          enum: [move, grasp, speak, navigate, wait]
+        parameters:
+          type: object
+        priority:
+          type: integer
+        dependencies:
+          type: array
+          items:
+            type: string
+    ExecutionStatus:
+      type: object
+      properties:
+        plan_id:
+          type: string
+        status:
+          type: string
+          enum: [pending, running, completed, failed]
+        progress:
+          type: number
+          format: float
+        completed_tasks:
+          type: array
+          items:
+            type: string
+        error_message:
+          type: string

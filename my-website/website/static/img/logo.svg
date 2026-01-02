@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <!-- Book base -->
+  <rect x="20" y="30" width="60" height="50" rx="5" fill="#25c2a0" stroke="#1a8870" stroke-width="2"/>
+
+  <!-- Book pages -->
+  <path d="M25,30 Q35,25 45,30 Q55,35 65,30 Q75,25 80,30 L80,80 Q75,75 65,80 Q55,85 45,80 Q35,75 25,80 Z" fill="#ffffff" stroke="#1a8870" stroke-width="1"/>
+
+  <!-- AI symbol - circuit pattern -->
+  <g stroke="#1a8870" stroke-width="1.5" fill="none">
+    <path d="M35,45 L40,45 L40,50 L45,50 L45,45 L50,45"/>
+    <path d="M55,45 L60,45 L60,50 L65,50 L65,45 L70,45"/>
+    <path d="M40,55 L45,55 L45,60 L50,60 L50,55 L55,55"/>
+    <path d="M50,65 L55,65 L55,70 L60,70 L60,65 L65,65"/>
+  </g>
+
+  <!-- Spec symbol - brackets -->
+  <path d="M30,55 L25,55 L25,65 L30,65" stroke="#1a8870" stroke-width="2" fill="none"/>
+  <path d="M70,55 L75,55 L75,65 L70,65" stroke="#1a8870" stroke-width="2" fill="none"/>
+</svg>
